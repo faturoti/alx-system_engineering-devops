@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# to set nginx to get info from port 80
+sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
+sudo service nginx restart
+kill -9 "$(cat /var/run/nginx.pid)"
