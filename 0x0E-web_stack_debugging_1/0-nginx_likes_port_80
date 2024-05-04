@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This would help us configure  nginx to read from port 80
+cd /etc/nginx/sites-enabled/ || exit;
+default folder to be deleted off
+rm default;
+# next step to create symbolic link
+ln -s /etc/nginx/sites-available/default default;
+# Resart the prog
+service nginx restart
