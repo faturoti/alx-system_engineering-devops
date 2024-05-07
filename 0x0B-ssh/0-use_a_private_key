@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# To connect this client to my server on ALX f.
+ssh -i ~/.ssh/school ubuntu@54.157.161.185
