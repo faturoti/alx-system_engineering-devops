@@ -11,7 +11,7 @@ echo "Ceci n'est pas une page" > 404.html
 sudo mv 404.html /var/www/html
 
 # Set up server config file
-printf %s "server {
+sudo printf %s "server {
    listen 80 default_server;
    listen [::]:80 default_server;
    add_header X-Served-By $HOSTNAME;
