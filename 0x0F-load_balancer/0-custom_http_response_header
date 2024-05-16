@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # to set up server
+
 # install and update engine
+set -e
 sudo apt-get update -y
 sudo apt-get install -y
 
@@ -11,7 +13,7 @@ echo "Ceci n'est pas une page" > 404.html
 sudo mv 404.html /var/www/html
 
 # Set up server config file
-sudo printf %s "server {
+echo "server {
    listen 80 default_server;
    listen [::]:80 default_server;
    add_header X-Served-By $HOSTNAME;

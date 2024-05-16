@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# This is to install HAProx and configure it
+
+apt update -y
+apt install -y haproxy
+
+echo "ENABLED=1" >> /etc/default/haproxy
+confg_scr=\
+"
+frontend haproxy-main
+	bind *:80
+	option forwardfor
+	default_backend nginx_servers
+
+backend nginx_servers
+	balance roundrobin
+	server 530518-web-01 54.160.89.29:80 check
+	server 530518-web-02 54.86.63.219:80 check
+"
+
+echo "$confg_scr" >> /etc/haproxy/haproxy.cfg
+
+service haproxy restart
