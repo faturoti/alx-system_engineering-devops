@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This is ufw setting to allow 22, 80 & 443
+
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+# open allowed port
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow 443
+sudo ufw enable
