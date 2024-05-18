@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This is the srip to swap user
+
+sudo -u "$1" whoami
